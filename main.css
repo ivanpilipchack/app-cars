@@ -1,0 +1,148 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 60px;
+}
+
+.fas {
+    font-size: 40px;
+}
+
+.car {
+    margin-bottom: 20px;
+    margin-left: 0px;
+    width: 50%
+}
+
+.car h1 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+.phone {
+    height: 36px;
+}
+
+.search__wrap {
+    display: flex;
+    padding-bottom: 0px;
+}
+
+.search__wrap input {
+    padding: 6px;
+    width: 71%;
+    border: 1px solid silver;
+}
+
+.dropdown-item {
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+.btns {
+    cursor: pointer;
+    text-align: center;
+    width: 90px;
+    padding-left: 12px;
+    border-radius: 5px;
+    border: 1px solid #6c757d;
+    margin-right: 3px;
+}
+
+.car__list {
+    padding-left: 0px;
+}
+
+.car__product {
+    margin: 100px 0px 0px 50px;
+    width: 320px;
+}
+
+.car__product img {}
+
+.car__detal {
+    margin: 100px 0px 0px 50px;
+}
+
+.show {
+    cursor: pointer;
+    outline: none;
+    background: none;
+    width: 101px;
+    height: 40px;
+    color: green;
+    border: 1px solid green;
+    border-radius: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.buy {
+    cursor: pointer;
+    outline: none;
+    padding: 8px 11px;
+    background: blue;
+    color: white;
+    border-radius: 5px;
+    margin-left: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: none;
+}
+
+.active {
+    background: blue;
+    color: white;
+}
+
+.about__car li {
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+}
+
+
+/*Animations*/
+
+.phone-enter-active,
+.phone-leave-active {
+    transition: all .7s;
+}
+
+.phone-enter,
+.phone-leave-to {
+    transform: translateX(100px);
+    opacity: 0;
+}
+
+.navbar-enter-active {
+    animation: navbar-in .5s;
+}
+
+.navbar-leave-active {
+    animation: navbar-in .5s reverse;
+}
+
+@keyframes navbar-in {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 4px;
+}

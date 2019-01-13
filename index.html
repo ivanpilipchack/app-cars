@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+
+
+
+
+</head>
+
+<body>
+
+    <div class="container" id="app">
+
+        <div class="car">
+            <h1>Cars aplicatioon</h1>
+            <div class="search__wrap">
+                <button v-on:click="navbar = !navbar" class="nav btns btn-outline-secondary">{{ menuCar }}</button>
+                <input v-model="search" type="text" class="search" placeholder="name, model">
+            </div>
+            <div class="car__menu">
+                <transition name="navbar">
+                    <ul v-if="navbar" class="car__list">
+                        <li class="dropdown-item" v-for="(car, index) of filteredCars" v-on:click="selectCar(index)" :class="{ 'active': currentCar === index  }">{{ car.name }} - {{ car.model }}</li>
+                    </ul>
+
+                </transition>
+
+            </div>
+        </div>
+        <div class="car">
+            <div class="car__product">
+                <h3>{{ car.name }}</h3>
+                <img v-bind:src="car.image" width="270" height="200" v-bind:alt="car.name">
+                <legend> your fiedback</legend>
+                <form action="">
+                    <span>{{ count }}/30</span>
+                    <textarea v-model="text" class="form-control"></textarea>
+                    <button class="btn-primary" v-if="count <= 30">send</button>
+                    <span class="hint" v-else>limit of simvol</span>
+                </form>
+            </div>
+        </div>
+        <div class="car">
+            <div class="car__detal">
+                <h4>Car Details</h4>
+                <ul class="about__car">
+                    <li>Model - <strong>{{ car.model }}</strong></li>
+                    <li>Year - <strong>{{ car.year }}</strong></li>
+                    <li>Onwer - <strong>{{ car.owner }}</strong></li>
+                </ul>
+                <div class="phone">
+                    <transition name="phone">
+                        <p v-if="phone" class="phone">{{ car.phone }}</p>
+                    </transition>
+
+                </div>
+                <div class="options">
+                    <button class="show" v-on:click="phone = !phone">{{ phoneBtn }}</button>
+                    <button class="buy">Buy</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
